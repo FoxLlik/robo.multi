@@ -7,6 +7,12 @@ interface RequestBody {
 export default async (req: RoboRequest) => {
 	const { code } = (await req.json()) as RequestBody
 
+	console.log('code', code)
+	console.log('process.env.VITE_DISCORD_CLIENT_ID', process.env.VITE_DISCORD_CLIENT_ID)
+	console.log('process.env.VITE_DISCORD_CLIENT_ID!', process.env.VITE_DISCORD_CLIENT_ID!)
+	console.log('process.env.DISCORD_CLIENT_SECRET', process.env.DISCORD_CLIENT_SECRET)
+	console.log('process.env.DISCORD_CLIENT_SECRET!', process.env.DISCORD_CLIENT_SECRET!)
+
 	// Exchange the code for an access_token
 	const response = await fetch(`https://discord.com/api/oauth2/token`, {
 		method: 'POST',
@@ -21,6 +27,8 @@ export default async (req: RoboRequest) => {
 		})
 	})
 	const { access_token } = await response.json()
+
+	console.log('access_token ==> ', access_token)
 
 	return { access_token }
 }

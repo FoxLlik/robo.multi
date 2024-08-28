@@ -148,20 +148,10 @@ export async function authenticateSdk(options?: AuthenticateSdkOptions) {
 		scope: scope
 	})
 
-	const dsadsa = await discordSdk.commands.authorize({
-		client_id: import.meta.env.VITE_DISCORD_CLIENT_ID,
-		response_type: 'code',
-		state: '',
-		prompt: 'none',
-		scope: scope
-	})
-
-	console.log('dsadsa', dsadsa)
 	console.log('code', code)
 	console.log('import.meta.env.VITE_DISCORD_CLIENT_ID', import.meta.env.VITE_DISCORD_CLIENT_ID)
 
 	const response = await fetch('/api/token', {
-	// const response = await fetch('/.proxy', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'
