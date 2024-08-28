@@ -30,7 +30,7 @@ export const Activity = () => {
 				session != null
 				?
 					<div>
-						<img src={`https://cdn.discordapp.com/avatars/525490889582313506/${session?.user?.avatar}.webp?size=128`} alt="" />
+						<img src={`https://cdn.discordapp.com/avatars/${session?.user?.id}/${session?.user?.avatar}.webp?size=128`} alt="" />
 						<br />
 						Юу байна, {session?.user?.username}
 					</div>

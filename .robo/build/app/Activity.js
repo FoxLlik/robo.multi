@@ -27,7 +27,7 @@ export const Activity = ()=>{
         className: "logo",
         alt: "Discord"
     }), /*#__PURE__*/ React.createElement("h1", null, "Hello, World"), channelName ? /*#__PURE__*/ React.createElement("h3", null, "#", channelName) : /*#__PURE__*/ React.createElement("h3", null, status), session != null ? /*#__PURE__*/ React.createElement("div", null, /*#__PURE__*/ React.createElement("img", {
-        src: `https://cdn.discordapp.com/avatars/525490889582313506/${session?.user?.avatar}.webp?size=128`,
+        src: `https://cdn.discordapp.com/avatars/${session?.user?.id}/${session?.user?.avatar}.webp?size=128`,
         alt: ""
     }), /*#__PURE__*/ React.createElement("br", null), "Юу байна, ", session?.user?.username) : /*#__PURE__*/ React.createElement(React.Fragment, null), /*#__PURE__*/ React.createElement("small", null, "Powered by ", /*#__PURE__*/ React.createElement("strong", null, "Robo.js")));
 };
