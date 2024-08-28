@@ -151,12 +151,26 @@ export async function authenticateSdk(options?: AuthenticateSdkOptions) {
 	console.log('code', code)
 	console.log('import.meta.env.VITE_DISCORD_CLIENT_ID', import.meta.env.VITE_DISCORD_CLIENT_ID)
 
-	const response = await fetch('/api/token', {
+	// const response = await fetch('/api/token', {
+	// 	method: 'POST',
+	// 	headers: {
+	// 		'Content-Type': 'application/json'
+	// 	},
+	// 	body: JSON.stringify({ code })
+	// })
+	// const { access_token } = await response.json()
+
+	const response = await fetch(`https://discord.com/api/oauth2/token`, {
 		method: 'POST',
 		headers: {
-			'Content-Type': 'application/json'
+			'Content-Type': 'application/x-www-form-urlencoded'
 		},
-		body: JSON.stringify({ code })
+		body: new URLSearchParams({
+			client_id: process.env.VITE_DISCORD_CLIENT_ID!,
+			client_secret: process.env.DISCORD_CLIENT_SECRET!,
+			grant_type: 'authorization_code',
+			code: code
+		})
 	})
 	const { access_token } = await response.json()
 
