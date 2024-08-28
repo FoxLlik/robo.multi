@@ -127,8 +127,7 @@ export function useDiscordSdk() {
     });
     console.log('code', code);
     console.log('import.meta.env.VITE_DISCORD_CLIENT_ID', import.meta.env.VITE_DISCORD_CLIENT_ID);
-    console.log('import.meta.env.DISCORD_CLIENT_SECRET', import.meta.env.DISCORD_CLIENT_SECRET);
-    console.log('import.meta.env.DISCORD_SEC', import.meta.env.DISCORD_SEC);
+    console.log('import.meta.env.VITE_DISCORD_CLIENT_SECRET', import.meta.env.VITE_DISCORD_CLIENT_SECRET);
     // const response = await fetch('/api/token', {
     // 	method: 'POST',
     // 	headers: {
@@ -144,7 +143,7 @@ export function useDiscordSdk() {
         },
         body: new URLSearchParams({
             client_id: import.meta.env.VITE_DISCORD_CLIENT_ID,
-            client_secret: import.meta.env.DISCORD_SEC,
+            client_secret: import.meta.env.VITE_DISCORD_CLIENT_SECRET,
             grant_type: 'authorization_code',
             code: code
         })
