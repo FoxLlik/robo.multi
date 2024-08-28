@@ -160,8 +160,8 @@ export async function authenticateSdk(options?: AuthenticateSdkOptions) {
 	console.log('code', code)
 	console.log('import.meta.env.VITE_DISCORD_CLIENT_ID', import.meta.env.VITE_DISCORD_CLIENT_ID)
 
-	// const response = await fetch('/api/token', {
-	const response = await fetch('/.proxy', {
+	const response = await fetch('/api/token', {
+	// const response = await fetch('/.proxy', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'
