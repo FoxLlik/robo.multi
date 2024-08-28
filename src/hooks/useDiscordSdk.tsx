@@ -150,6 +150,7 @@ export async function authenticateSdk(options?: AuthenticateSdkOptions) {
 
 	console.log('code', code)
 	console.log('import.meta.env.VITE_DISCORD_CLIENT_ID', import.meta.env.VITE_DISCORD_CLIENT_ID)
+	console.log('import.meta.env.DISCORD_CLIENT_SECRET', import.meta.env.DISCORD_CLIENT_SECRET)
 
 	// const response = await fetch('/api/token', {
 	// 	method: 'POST',
