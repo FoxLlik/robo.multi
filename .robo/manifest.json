@@ -23,9 +23,9 @@
       }
     },
     "language": "typescript",
-    "mode": "production",
+    "mode": "development",
     "type": "robo",
-    "updatedAt": "2024-08-28T06:33:40.142Z",
+    "updatedAt": "2024-08-28T07:08:03.517Z",
     "version": "0.10.13"
   },
   "api": {
