@@ -148,6 +148,9 @@ export async function authenticateSdk(options?: AuthenticateSdkOptions) {
 		scope: scope
 	})
 
+	console.log('code', code)
+	console.log('import.meta.env.VITE_DISCORD_CLIENT_ID', import.meta.env.VITE_DISCORD_CLIENT_ID)
+
 	const response = await fetch('/api/token', {
 		method: 'POST',
 		headers: {
@@ -157,8 +160,12 @@ export async function authenticateSdk(options?: AuthenticateSdkOptions) {
 	})
 	const { access_token } = await response.json()
 
+	console.log('access_token', access_token)
+
 	// Authenticate with Discord client (using the access_token)
 	const auth = await discordSdk.commands.authenticate({ access_token })
+
+	console.log('auth', auth)
 
 	if (auth == null) {
 		throw new Error('Authenticate command failed')
