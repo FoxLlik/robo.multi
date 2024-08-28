@@ -166,8 +166,8 @@ export async function authenticateSdk(options?: AuthenticateSdkOptions) {
 			'Content-Type': 'application/x-www-form-urlencoded'
 		},
 		body: new URLSearchParams({
-			client_id: process.env.VITE_DISCORD_CLIENT_ID!,
-			client_secret: process.env.DISCORD_CLIENT_SECRET!,
+			client_id: import.meta.env.VITE_DISCORD_CLIENT_ID,
+			client_secret: import.meta.env.DISCORD_CLIENT_SECRET,
 			grant_type: 'authorization_code',
 			code: code
 		})
