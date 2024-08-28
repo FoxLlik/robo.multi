@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useDiscordSdk } from '../hooks/useDiscordSdk'
 
 export const Activity = () => {
-	const { authenticated, discordSdk, status } = useDiscordSdk()
+	const { authenticated, discordSdk, status, session } = useDiscordSdk()
 	const [channelName, setChannelName] = useState<string>()
 
 	useEffect(() => {
@@ -26,6 +26,17 @@ export const Activity = () => {
 			<img src="/rocket.png" className="logo" alt="Discord" />
 			<h1>Hello, World</h1>
 			{channelName ? <h3>#{channelName}</h3> : <h3>{status}</h3>}
+			{
+				session != null
+				?
+					<div>
+						<img src={`https://cdn.discordapp.com/avatars/525490889582313506/${session?.user?.avatar}.webp?size=128`} alt="" />
+						<br />
+						Юу байна, {session?.user?.username}
+					</div>
+				:
+					<></>
+			}
 			<small>
 				Powered by <strong>Robo.js</strong>
 			</small>
